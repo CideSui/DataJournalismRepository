@@ -1,0 +1,14 @@
+import smtplib, sys
+
+fromaddr = 'kirkirkester@gmail.com'
+toaddrs  = 'franklingothic14@gmail.com'
+msg = 'VSEM PRIVEEEET'
+
+gusername = 'kirkirkester@gmail.com'
+gpassword = '*********'
+
+server = smtplib.SMTP('smtp.gmail.com:587')
+server.starttls()
+server.login (gusername,gpassword)
+server.sendmail (fromaddr, toaddrs, msg)
+server.quit()
