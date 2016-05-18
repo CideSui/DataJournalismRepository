@@ -1,0 +1,15 @@
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import re
+
+url = 'http://www.president.gov.ua/news/speeches'
+response = urlopen(url)
+html = response.read()
+
+
+selector = 'h3'
+soup = BeautifulSoup(html, "html.parser")
+bills = soup.select(selector)
+
+for l in bills:
+    	if re.match(u".*", l.text): print(l.text)
